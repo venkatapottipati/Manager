@@ -1,0 +1,22 @@
+<h4>Manager List</h4>
+
+<table>
+<tr>
+  <th>full name</th>
+  <th>phone number</th>
+  <th>emailaddress</th>
+  <th></th>
+</tr>
+{% for data in data %}
+<tr>
+  <td>{{data.Fullname}}</td>
+  <td>{{data.PhoneNumber}}</td>
+  <td>{{data.emailAddress}}</td>
+  <td><form action="/delete_name/{{data.id}}" method="get">
+	<input type="submit" value="Delete"/>
+      </form>
+  </td>
+</tr>
+{% endfor %}
+</table>
+

@@ -1,0 +1,37 @@
+<head>
+<title> Add Contact</title>
+<script>
+function validation_name()
+	{
+	  var contact=document.forms["add_form"]["Name"].value;
+	  if (contact=="" || contact==null)
+	  {
+	    alert("contact require");
+	    return false;
+	  }
+
+	  var phone=document.forms["add_form"]["Phone"].value;
+	  if (phone=="" || phone==null)
+	  {
+	    alert("phone require");
+	    return false;
+	  }
+
+	  var email=document.forms["add_form"]["email"].value;
+	  if (emai=="" || email==null)
+	  {
+	    alert("email require")
+ 	    return false;
+	  }
+	}
+</script>
+
+<form method="post" action="/Add/" id="add_form">{% csrf_token %}
+<table>
+<tr><td>Name:</td><td><input type="text" name="Name" ></td></tr>
+<tr><td>phone number:</td><td><input type="text" name="Phone" ></td></tr>
+<tr><td>email address:</td><td><input type="text" name="email"></td></tr>
+
+<tr colspan="2" align="center"><td><input type="submit" value="Submit"/></td></tr>
+</table>
+</form>
